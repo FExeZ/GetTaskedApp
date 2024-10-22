@@ -15,22 +15,22 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    // Obtener todos los usuarios
+    // Obtain all users
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    // Obtener un usuario por ID
+    // Obtain user by id
     public Optional<User> getUserById(Long id) {
         return userRepository.findById(id);
     }
 
-    // Crear o actualizar un usuario
+    // Create or update user
     public User saveUser(User user) {
         return userRepository.save(user);
     }
 
-    // Eliminar un usuario por ID
+    // Delete user by id
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }

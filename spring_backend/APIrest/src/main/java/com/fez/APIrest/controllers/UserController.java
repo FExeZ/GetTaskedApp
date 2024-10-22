@@ -15,18 +15,18 @@ import java.util.Optional;
 public class UserController {
 
     @Autowired
-    private UserService userService; // Inyecta el servicio
+    private UserService userService; // Injection service
 
     // Obtener todos los usuarios
     @GetMapping
     public List<User> getAllUsers() {
-        return userService.getAllUsers(); // Llama al método del servicio
+        return userService.getAllUsers(); // Calling service
     }
 
-    // Obtener un usuario por su ID
+    // Obtain an user by id
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        Optional<User> user = userService.getUserById(id); // Llama al método del servicio
+        Optional<User> user = userService.getUserById(id); // Calling service
         if (user.isPresent()) {
             return new ResponseEntity<>(user.get(), HttpStatus.OK);
         } else {
@@ -34,32 +34,32 @@ public class UserController {
         }
     }
 
-    // Crear un nuevo usuario
+    // Create a new user
     @PostMapping
     public User createUser(@RequestBody User user) {
-        return userService.saveUser(user); // Llama al método del servicio
+        return userService.saveUser(user); // Calling service
     }
 
-    // Actualizar un usuario existente
+    // Update existing user
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User userDetails) {
-        Optional<User> user = userService.getUserById(id); // Llama al método del servicio
+        Optional<User> user = userService.getUserById(id); // Calling service
         if (user.isPresent()) {
             User updatedUser = user.get();
             updatedUser.setName(userDetails.getName());
             updatedUser.setEmail(userDetails.getEmail());
             updatedUser.setPassword(userDetails.getPassword());
-            return new ResponseEntity<>(userService.saveUser(updatedUser), HttpStatus.OK); // Llama al método del servicio
+            return new ResponseEntity<>(userService.saveUser(updatedUser), HttpStatus.OK); // Calling service
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    // Eliminar un usuario
+    // Delete a user
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        if (userService.getUserById(id).isPresent()) { // Llama al método del servicio
-            userService.deleteUser(id); // Llama al método del servicio
+        if (userService.getUserById(id).isPresent()) { // Calling service
+            userService.deleteUser(id); // Calling service
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

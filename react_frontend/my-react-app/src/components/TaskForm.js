@@ -36,13 +36,13 @@ const TaskForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validar la fecha de expiración y el usuario
+    // Validate date and user
     if (!expirationDate || !userId) {
       console.error("Expiration date and user are required");
       return;
     }
 
-    // Formatear la fecha en formato YYYY-MM-DD
+    // YYYY-MM-DD
     const formattedExpirationDate = new Date(expirationDate)
       .toISOString()
       .split("T")[0];
@@ -126,7 +126,7 @@ const TaskForm = () => {
           <option value="">Select a user</option>
           {users.map((user) => (
             <option key={user.id} value={user.id}>
-              {user.name} {/* Solo mostramos el nombre aquí */}
+              {user.name} {/* Name only */}
             </option>
           ))}
         </select>

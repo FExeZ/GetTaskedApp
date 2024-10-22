@@ -20,17 +20,17 @@ public class TaskService {
     @Autowired
     private UserRepository userRepository;
 
-    // Obtener todas las tareas
+    // Obtain all the tasks
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
-    // Obtener una tarea por ID
+    // Obtain task by id
     public Optional<Task> getTaskById(Long id) {
         return taskRepository.findById(id);
     }
 
-    // Crear o actualizar una tarea
+    // Create or update task
     public Task saveTask(Task task) {
         User user = userRepository.findById(task.getUser().getId())
                 .orElseThrow(() -> new NoSuchElementException("User not found with id" + task.getUser().getId()));
@@ -38,7 +38,7 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-    // Eliminar una tarea por ID
+    // Delete task by id
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }

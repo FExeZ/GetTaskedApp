@@ -7,53 +7,53 @@
 
 .app-container {
   display: flex;
-  flex-direction: column; /* Asegura que los formularios y la lista estén en columna */
-  align-items: center; /* Centra horizontalmente */
-  margin-top: 20px; /* Espacio superior para la página */
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .form-container {
   display: flex;
-  flex-direction: row; /* Mantiene los formularios uno al lado del otro */
+  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 20px; /* Espacio inferior para separar formularios de la lista */
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
   .form-container {
-    flex-direction: column; /* En pantallas pequeñas, coloca los formularios en columna */
-    align-items: center; /* Centra los formularios */
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 .task-form {
-  margin: 0 10px; /* Espacio entre los formularios */
-  width: 300px; /* Ancho fijo para los formularios */
-  max-width: 100%; /* Asegúrate de que no exceda el ancho del contenedor */
-  padding: 20px; /* Espacio interno en el formulario */
-  border: 1px solid #ccc; /* Borde opcional para resaltar el formulario */
-  border-radius: 5px; /* Esquinas redondeadas opcionales */
+  margin: 0 10px;
+  width: 300px;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .form-title {
-  margin-bottom: 10px; /* Espacio entre el título y el formulario */
-  text-align: center; /* Centra el título */
-  font-size: 1.2em; /* Ajusta el tamaño de la fuente según necesites */
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.2em;
 }
 
 button {
-  margin-top: 10px; /* Espaciado superior para el botón */
-  padding: 10px; /* Espaciado interno */
-  background-color: #4caf50; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Esquinas redondeadas del botón */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049; /* Color de fondo al pasar el mouse */
+  background-color: #45a049;
 }
 
 .ContainerTitle,
@@ -61,80 +61,79 @@ button:hover {
 .ContainerCompleted,
 .ContainerDate,
 .ContainerUser {
-  margin-bottom: 15px; /* Espaciado inferior para cada contenedor */
+  margin-bottom: 15px;
 }
 
 label {
-  margin-bottom: 5px; /* Espaciado inferior para la etiqueta */
-  font-weight: bold; /* Negrita para las etiquetas */
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input[type="text"],
 input[type="date"],
 select {
-  width: 100%; /* Hace que los inputs ocupen todo el ancho del contenedor */
-  padding: 8px; /* Espaciado interno para los inputs */
-  border: 1px solid #ccc; /* Borde del input */
-  border-radius: 4px; /* Esquinas redondeadas */
-  box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .task-list {
   display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */
-  justify-content: center; /* Centra las tarjetas */
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 20px;
 }
 
 .task-card {
-  background-color: #f9f9f9; /* Fondo de la tarjeta */
-  border: 1px solid #ddd; /* Borde */
-  border-radius: 5px; /* Bordes redondeados */
-  margin: 10px; /* Espacio entre tarjetas */
-  padding: 15px; /* Relleno interno */
-  flex: 1 1 calc(30% - 20px); /* Tamaño base de 30% con margen */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  flex: 1 1 calc(30% - 20px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
   .task-card {
-    flex: 1 1 calc(100% - 20px); /* En pantallas pequeñas, ocupa el 100% */
+    flex: 1 1 calc(100% - 20px); /* Small windows -> 100% */
   }
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  margin: 20px 0; /* Espacio entre la lista de tareas y la paginación */
+  margin: 20px 0;
 }
 
 .pagination button {
-  margin: 0 5px; /* Espacio entre los botones */
+  margin: 0 5px;
   padding: 10px;
-  background-color: #4caf50; /* Color de fondo */
-  color: white; /* Color del texto */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Esquinas redondeadas */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .pagination button:disabled {
-  background-color: #ccc; /* Color de fondo para el botón deshabilitado */
-  cursor: not-allowed; /* Cambia el cursor al pasar sobre el botón deshabilitado */
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .pagination span {
-  align-self: center; /* Centra el texto de la página */
+  align-self: center;
 }
 
 .task-list-container {
-  min-height: 200px; /* Ajusta esta altura mínima según tus necesidades */
-  margin-top: 20px; /* Espacio entre los formularios y la lista de tareas */
+  min-height: 200px;
+  margin-top: 20px; /* Space between tasks */
 }
 
 .task-list-title {
-  margin: 20px 0; /* Espaciado superior e inferior para el título */
-  font-size: 1.5em; /* Tamaño de fuente para el título */
-  font-weight: bold; /* Negrita para el título */
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: bold;
   text-align: left;
 }

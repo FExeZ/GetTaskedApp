@@ -15,7 +15,7 @@ const TaskUpdateForm = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await taskService.getAllTasks(); // Suponiendo que tienes un método para obtener todas las tareas
+        const response = await taskService.getAllTasks();
         setTasks(response);
       } catch (error) {
         console.error("Error fetching tasks:", error);

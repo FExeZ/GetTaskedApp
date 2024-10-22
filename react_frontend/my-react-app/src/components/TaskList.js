@@ -1,25 +1,25 @@
 // src/components/TaskList.js
 import React, { useEffect, useState } from "react";
-import taskService from "../services/taskService"; // Asegúrate de que esta ruta es correcta
+import taskService from "../services/taskService";
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const tasksPerPage = 2; // Número de tareas por página
+  const tasksPerPage = 2; // Number of tasks per page
 
   useEffect(() => {
     taskService
-      .getAllTasks() // Llama a la función para obtener las tareas
+      .getAllTasks() //
       .then((data) => setTasks(data))
       .catch((error) => console.error("Error fetching tasks:", error));
   }, []);
 
-  // Calcular las tareas a mostrar en la página actual
+  // Task to display
   const indexOfLastTask = currentPage * tasksPerPage;
   const indexOfFirstTask = indexOfLastTask - tasksPerPage;
   const currentTasks = tasks.slice(indexOfFirstTask, indexOfLastTask);
 
-  // Calcular el número total de páginas
+  // Total pages to display
   const totalPages = Math.ceil(tasks.length / tasksPerPage);
 
   const handleNextPage = () => {
