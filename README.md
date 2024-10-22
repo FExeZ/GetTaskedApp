@@ -30,3 +30,7 @@ GetTaskedApp es una aplicación de gestión de tareas desarrollada con **React**
 
 ## Imagenes de la aplicacion en produccion
 
+![image](https://github.com/user-attachments/assets/703d52ad-9111-41d6-9102-6541636ca74b)
+
+![image](https://github.com/user-attachments/assets/687c81a4-0b6c-40f5-896e-e7b99255656c)
+
